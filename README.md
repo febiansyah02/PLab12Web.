@@ -31,16 +31,25 @@ lab8_vuejs/
 │           └── Home.js
 └── index.html
 ```
-💻 Implementasi Berkas Komponen Frontend1. Komponen Halaman Utama (assets/js/components/Home.js)Menampilkan halaman beranda selamat datang menggunakan properti objek template internal VueJS .  JavaScriptconst Home = {
-    template: `
+Implementasi Berkas Komponen Frontend
+
+1. Komponen Halaman Utama (assets/js/components/Home.js)Menampilkan halaman beranda selamat datang menggunakan properti objek template internal VueJS .  
+```
+JavaScript
+const Home = {
+    template:
         <div class="home-container">
             <h2>Selamat Datang di Portal Admin Artikel</h2>
             <p>Gunakan menu navigasi di atas untuk mengelola data artikel secara real-time 
             memanfaatkan RESTful API CodeIgniter 4 dan VueJS.</p>
         </div>
-    `
 };
-2. Komponen Profil Pengembang (assets/js/components/About.js)Tugas Tambahan Modul: Menampilkan data diri mahasiswa beserta avatar/inisial nama pembuat aplikasi sebagai rute baru .  JavaScriptconst About = {
+```
+2. Komponen Profil Pengembang (assets/js/components/About.js)
+   
+   Tugas Tambahan Modul: Menampilkan data diri mahasiswa beserta avatar/inisial nama pembuat aplikasi sebagai rute baru.
+```
+   JavaScriptconst About = {
     template: `
         <div class="home-container" style="text-align: center; padding: 30px;">
             <h2>Profil Pengembang</h2>
@@ -54,7 +63,13 @@ lab8_vuejs/
         </div>
     `
 };
-3. Komponen Manajemen Artikel (assets/js/components/Artikel.js)Menampung seluruh logika operasional CRUD data artikel (GET, POST, PUT, DELETE) yang sebelumnya berada pada app.js lama.  JavaScriptconst Artikel = {
+```
+
+3. Komponen Manajemen Artikel (assets/js/components/Artikel.js)
+
+   Menampung seluruh logika operasional CRUD data artikel (GET, POST, PUT, DELETE) yang sebelumnya berada pada app.js lama.
+```
+   JavaScriptconst Artikel = {
     template: `
         <div>
             <h2>Manajemen Data Artikel</h2>
@@ -167,6 +182,8 @@ lab8_vuejs/
         }
     }
 };
+```
+
 🔀 Konfigurasi Router & Master Layout4. File Core App (assets/js/app.js)Menginisialisasi objek mapping rute URL, mendaftarkan komponen-komponen halaman ke dalam instance VueRouter, serta melakukan mounting aplikasi utama .  JavaScriptconst { createApp } = Vue;
 const { createRouter, createWebHashHistory } = VueRouter;
 
