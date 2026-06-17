@@ -184,7 +184,14 @@ const Home = {
 };
 ```
 
-🔀 Konfigurasi Router & Master Layout4. File Core App (assets/js/app.js)Menginisialisasi objek mapping rute URL, mendaftarkan komponen-komponen halaman ke dalam instance VueRouter, serta melakukan mounting aplikasi utama .  JavaScriptconst { createApp } = Vue;
+🔀 Konfigurasi Router & Master Layout
+
+4. File Core App (assets/js/app.js)
+
+   Menginisialisasi objek mapping rute URL, mendaftarkan komponen-komponen halaman ke dalam instance VueRouter, serta melakukan mounting aplikasi utama.
+
+```
+JavaScriptconst { createApp } = Vue;
 const { createRouter, createWebHashHistory } = VueRouter;
 
 const apiUrl = 'http://localhost:8080';
@@ -206,7 +213,15 @@ const router = createRouter({
 const app = createApp({});
 app.use(router);
 app.mount('#app');
-5. Berkas Tata Letak Induk (index.html)Bertindak sebagai Master Layout dengan menyertakan pustaka vue-router.global.js CDN, menyediakan menu link dinamis <router-link>, dan area penampung komponen visual <router-view> .  HTML<!DOCTYPE html>
+```
+
+5. Berkas Tata Letak Induk (index.html)
+
+   Bertindak sebagai Master Layout dengan menyertakan pustaka vue-router.global.js CDN, menyediakan menu link dinamis <router-link>, dan area penampung komponen visual <router-view>.
+
+```
+HTML
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -239,7 +254,15 @@ app.mount('#app');
     <script src="assets/js/app.js"></script>
 </body>
 </html>
-6. Desain Visual Menu Aktif (assets/css/style.css)Penambahan CSS spesifik kelas bawaan .router-link-exact-active untuk mendeteksi penanda visual halaman menu yang sedang aktif .  CSS.nav-menu {
+```
+
+6. Desain Visual Menu Aktif (assets/css/style.css)
+
+   Penambahan CSS spesifik kelas bawaan .router-link-exact-active untuk mendeteksi penanda visual halaman menu yang sedang aktif.
+
+```
+   CSS
+   .nav-menu {
     padding: 10px;
     background: #eff1ff;
     border-radius: 5px;
@@ -261,4 +284,32 @@ app.mount('#app');
     border: 1px solid #eff1ff;
     background: #fafafa;
 }
-📸 Dokumentasi Hasil Pengujian SPA (Single Page Application)Berikut adalah bukti dokumentasi pengujian navigasi antar-komponen di browser tanpa mengalami pemuatan ulang (hard-reload) halaman:  A. Tampilan Komponen Beranda (Home)Deskripsi: Tampilan visual awal saat rute default root (#/) diakses client pertama kali.Bukti Dokumentasi: ![Menu Beranda](GANTI_DENGAN_SCREENSHOT_MENU_HOME.png)B. Tampilan Komponen Kelola Artikel (Artikel CRUD)Deskripsi: Tampilan dinamis list artikel saat rute #/artikel ditekan, seluruh data berhasil di-render ulang dari backend tanpa reload.Bukti Dokumentasi: ![Kelola Artikel](GANTI_DENGAN_SCREENSHOT_MENU_ARTIKEL.png)C. Tampilan Komponen About Pengembang (About)Deskripsi: Hasil pengerjaan tugas mandiri penambahan rute profil mahasiswa /about .  Bukti Dokumentasi: ![About Pengembang](GANTI_DENGAN_SCREENSHOT_MENU_ABOUT.png)💡 KesimpulanMelalui Praktikum 12 ini, konsep Single Page Application (SPA) berhasil diterapkan sepenuhnya. Penggunaan library Vue Router memindahkan kendali manipulasi rute URL dari sisi server (Server-Side Routing) menjadi murni ditangani di browser pengguna (Client-Side Routing). Hasilnya, pertukaran layout antar-halaman visual dapat dieksekusi secara instan, menghemat bandwidth data, serta menciptakan user experience yang responsif dan cepat
+```
+
+📸 Dokumentasi Hasil Pengujian SPA (Single Page Application)
+
+Berikut adalah bukti dokumentasi pengujian navigasi antar-komponen di browser tanpa mengalami pemuatan ulang (hard-reload) halaman:  
+
+A. Tampilan Komponen Beranda (Home)
+
+Deskripsi: Tampilan visual awal saat rute default root (#/) diakses client pertama kali.
+
+Bukti Dokumentasi: <img width="956" height="539" alt="Cuplikan layar 2026-06-12 093236" src="https://github.com/user-attachments/assets/c29eb214-4fd7-4c7b-81be-509af63b4894" />
+
+
+B. Tampilan Komponen Kelola Artikel (Artikel CRUD)
+
+Deskripsi: Tampilan dinamis list artikel saat rute #/artikel ditekan, seluruh data berhasil di-render ulang dari backend tanpa reload.
+
+Bukti Dokumentasi: <img width="959" height="539" alt="Cuplikan layar 2026-06-12 093248" src="https://github.com/user-attachments/assets/b7d0c612-2881-4f26-9f47-71625215880d" />
+
+
+C. Tampilan Komponen About Pengembang (About)
+
+Deskripsi: Hasil pengerjaan tugas mandiri penambahan rute profil mahasiswa /about .  
+
+Bukti Dokumentasi: <img width="959" height="539" alt="Cuplikan layar 2026-06-12 093301" src="https://github.com/user-attachments/assets/6209e97a-4b95-4b84-9baf-8bda28d96187" />
+
+# Kesimpulan
+
+Melalui Praktikum 12 ini, konsep Single Page Application (SPA) berhasil diterapkan sepenuhnya. Penggunaan library Vue Router memindahkan kendali manipulasi rute URL dari sisi server (Server-Side Routing) menjadi murni ditangani di browser pengguna (Client-Side Routing). Hasilnya, pertukaran layout antar-halaman visual dapat dieksekusi secara instan, menghemat bandwidth data, serta menciptakan user experience yang responsif dan cepat
